@@ -3,7 +3,7 @@
 #include <cctype>
 using namespace std;
 
-// Define the structure for a binary expression tree node
+
 struct TreeNode {
     char data;
     TreeNode* left;
@@ -12,12 +12,12 @@ struct TreeNode {
     TreeNode(char value) : data(value), left(nullptr), right(nullptr) {}
 };
 
-// Function to check if a character is an operator
+
 bool isOperator(char c) {
     return (c == '+' || c == '-' || c == '*' || c == '/');
 }
 
-// Function to create a binary expression tree from a postfix expression
+
 TreeNode* createExpressionTree(const string& postfix) {
     stack<TreeNode*> stack;
 
@@ -38,7 +38,7 @@ TreeNode* createExpressionTree(const string& postfix) {
     return stack.top();
 }
 
-// Function to evaluate a binary expression tree
+
 int evaluateExpressionTree(TreeNode* root) {
     if (root == nullptr) {
         return 0;
@@ -65,7 +65,7 @@ int evaluateExpressionTree(TreeNode* root) {
     return 0; // Default case
 }
 
-// Function to perform an in-order traversal of the binary expression tree
+
 void inOrderTraversal(TreeNode* root) {
     if (root) {
         if (isOperator(root->data)) {
@@ -91,8 +91,7 @@ int main() {
     int result = evaluateExpressionTree(expressionTree);
     cout << "Result of the Expression: " << result << endl;
 
-    // Clean up the binary expression tree (free memory)
-    // You may need to implement a function to delete the tree properly.
+   
 
     return 0;
 }
