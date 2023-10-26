@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Define the structure for a binary tree node
+
 struct TreeNode {
     char data;
     TreeNode* left;
@@ -10,7 +10,7 @@ struct TreeNode {
     TreeNode(char value) : data(value), left(nullptr), right(nullptr) {}
 };
 
-// Function to convert Preorder to Postorder
+
 void preorderToPostorder(const string& preorder, int& index) {
     if (index >= preorder.length()) {
         return;
@@ -29,7 +29,7 @@ void preorderToPostorder(const string& preorder, int& index) {
     cout << current << " ";
 }
 
-// Function to convert Postorder to Preorder
+
 void postorderToPreorder(const string& postorder, int& index) {
     if (index < 0) {
         return;
@@ -49,7 +49,7 @@ void postorderToPreorder(const string& postorder, int& index) {
 }
 
 int main() {
-    // Input the Preorder and Postorder strings
+
     string preorder = "ABDCEFG";
     string postorder = "DBEFGCA";
 
