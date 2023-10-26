@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Define the structure for a BST node
+
 struct TreeNode {
     int data;
     TreeNode* left;
@@ -10,7 +10,7 @@ struct TreeNode {
     TreeNode(int value) : data(value), left(nullptr), right(nullptr) {}
 };
 
-// Function to insert a new node into the BST
+
 TreeNode* insert(TreeNode* root, int value) {
     if (root == nullptr) {
         return new TreeNode(value);
@@ -25,7 +25,7 @@ TreeNode* insert(TreeNode* root, int value) {
     return root;
 }
 
-// Function to find the minimum value node in a BST
+
 TreeNode* findMin(TreeNode* node) {
     while (node->left) {
         node = node->left;
@@ -33,7 +33,7 @@ TreeNode* findMin(TreeNode* node) {
     return node;
 }
 
-// Function to delete a node from the BST
+
 TreeNode* deleteNode(TreeNode* root, int value) {
     if (root == nullptr) {
         return root;
@@ -44,7 +44,7 @@ TreeNode* deleteNode(TreeNode* root, int value) {
     } else if (value > root->data) {
         root->right = deleteNode(root->right, value);
     } else {
-        // Node with only one child or no child
+
         if (root->left == nullptr) {
             TreeNode* temp = root->right;
             delete root;
@@ -55,20 +55,20 @@ TreeNode* deleteNode(TreeNode* root, int value) {
             return temp;
         }
 
-        // Node with two children: get the in-order successor (smallest in the right subtree)
+
         TreeNode* temp = findMin(root->right);
 
-        // Copy the in-order successor's data to this node
+
         root->data = temp->data;
 
-        // Delete the in-order successor
+
         root->right = deleteNode(root->right, temp->data);
     }
 
     return root;
 }
 
-// Function to perform an in-order traversal of the BST
+
 void inOrderTraversal(TreeNode* root) {
     if (root) {
         inOrderTraversal(root->left);
@@ -80,7 +80,7 @@ void inOrderTraversal(TreeNode* root) {
 int main() {
     TreeNode* root = nullptr;
 
-    // Insert elements into the BST
+
     root = insert(root, 50);
     root = insert(root, 30);
     root = insert(root, 20);
@@ -93,7 +93,7 @@ int main() {
     inOrderTraversal(root);
     cout << endl;
 
-    // Delete an element from the BST
+
     int valueToDelete = 30;
     root = deleteNode(root, valueToDelete);
 
@@ -101,8 +101,8 @@ int main() {
     inOrderTraversal(root);
     cout << endl;
 
-    // Clean up the binary search tree (free memory)
-    // You may need to implement a function to delete the tree properly.
+
+
 
     return 0;
 }
