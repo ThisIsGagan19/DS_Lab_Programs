@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Define the structure for a BST node
+
 struct TreeNode {
     int data;
     TreeNode* left;
@@ -10,7 +10,7 @@ struct TreeNode {
     TreeNode(int value) : data(value), left(nullptr), right(nullptr) {}
 };
 
-// Function to insert a new node into the BST
+
 TreeNode* insert(TreeNode* root, int value) {
     if (root == nullptr) {
         return new TreeNode(value);
@@ -25,7 +25,7 @@ TreeNode* insert(TreeNode* root, int value) {
     return root;
 }
 
-// Function to search for an element in the BST
+
 bool search(TreeNode* root, int value) {
     if (root == nullptr) {
         return false; // Element not found
@@ -45,7 +45,7 @@ bool search(TreeNode* root, int value) {
 int main() {
     TreeNode* root = nullptr;
 
-    // Insert elements into the BST
+
     root = insert(root, 50);
     root = insert(root, 30);
     root = insert(root, 20);
@@ -54,7 +54,7 @@ int main() {
     root = insert(root, 60);
     root = insert(root, 80);
 
-    // Element to search for
+
     int elementToFind = 40;
 
     if (search(root, elementToFind)) {
@@ -63,8 +63,8 @@ int main() {
         cout << elementToFind << " not found in the Binary Search Tree." << endl;
     }
 
-    // Clean up the binary search tree (free memory)
-    // You may need to implement a function to delete the tree properly.
+
+
 
     return 0;
 }
