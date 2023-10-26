@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Define the structure for a binary tree node
+
 struct TreeNode {
     int data;
     TreeNode* left;
