@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Define the structure for a binary tree node
+
 struct TreeNode {
     char data;
     TreeNode* left;
@@ -10,7 +10,7 @@ struct TreeNode {
     TreeNode(char value) : data(value), left(nullptr), right(nullptr) {}
 };
 
-// Function to convert Postorder to Preorder
+
 void postorderToPreorder(const string& postorder, int& postIndex, TreeNode*& root) {
     if (postIndex < 0) {
         return;
@@ -28,7 +28,7 @@ void postorderToPreorder(const string& postorder, int& postIndex, TreeNode*& roo
     postorderToPreorder(postorder, postIndex, root->left);
 }
 
-// Function to perform a Preorder traversal of the binary tree
+
 void preorderTraversal(TreeNode* root) {
     if (root) {
         cout << root->data << " ";
@@ -38,7 +38,7 @@ void preorderTraversal(TreeNode* root) {
 }
 
 int main() {
-    // Input the Postorder string
+
     string postorder = "DEBNFGCA";
 
     int postIndex = postorder.length() - 1;
@@ -51,8 +51,7 @@ int main() {
     preorderTraversal(root);
     cout << endl;
 
-    // Clean up the binary tree (free memory)
-    // You may need to implement a function to delete the tree properly.
+
 
     return 0;
 }
