@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Define the structure for a BST node
+
 struct TreeNode {
     int data;
     TreeNode* left;
@@ -10,7 +10,7 @@ struct TreeNode {
     TreeNode(int value) : data(value), left(nullptr), right(nullptr) {}
 };
 
-// Function to insert a new node into the BST
+
 TreeNode* insert(TreeNode* root, int value) {
     if (root == nullptr) {
         return new TreeNode(value);
@@ -25,7 +25,7 @@ TreeNode* insert(TreeNode* root, int value) {
     return root;
 }
 
-// Function to perform an in-order traversal of the BST
+
 void inOrderTraversal(TreeNode* root) {
     if (root) {
         inOrderTraversal(root->left);
@@ -37,7 +37,7 @@ void inOrderTraversal(TreeNode* root) {
 int main() {
     TreeNode* root = nullptr;
 
-    // Insert elements into the BST
+
     root = insert(root, 50);
     root = insert(root, 30);
     root = insert(root, 20);
@@ -50,8 +50,8 @@ int main() {
     inOrderTraversal(root);
     cout << endl;
 
-    // Clean up the binary search tree (free memory)
-    // You may need to implement a function to delete the tree properly.
+
+
 
     return 0;
 }
