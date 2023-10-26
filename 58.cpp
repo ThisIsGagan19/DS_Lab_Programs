@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Define the structure for an AVL tree node
+
 struct TreeNode {
     int data;
     TreeNode* left;
@@ -11,26 +11,26 @@ struct TreeNode {
     TreeNode(int value) : data(value), left(nullptr), right(nullptr), height(1) {}
 };
 
-// Function to get the height of a node
+
 int getHeight(TreeNode* node) {
     if (node == nullptr)
         return 0;
     return node->height;
 }
 
-// Function to get the balance factor of a node
+
 int getBalanceFactor(TreeNode* node) {
     if (node == nullptr)
         return 0;
     return getHeight(node->left) - getHeight(node->right);
 }
 
-// Function to update the height of a node
+
 void updateHeight(TreeNode* node) {
     node->height = 1 + max(getHeight(node->left), getHeight(node->right));
 }
 
-// Function to perform a right rotation
+
 TreeNode* rightRotate(TreeNode* y) {
     TreeNode* x = y->left;
     TreeNode* T2 = x->right;
@@ -44,7 +44,7 @@ TreeNode* rightRotate(TreeNode* y) {
     return x;
 }
 
-// Function to perform a left rotation
+
 TreeNode* leftRotate(TreeNode* x) {
     TreeNode* y = x->right;
     TreeNode* T2 = y->left;
@@ -58,7 +58,7 @@ TreeNode* leftRotate(TreeNode* x) {
     return y;
 }
 
-// Function to insert a new node into the AVL tree
+
 TreeNode* insert(TreeNode* root, int value) {
     if (root == nullptr)
         return new TreeNode(value);
@@ -68,12 +68,12 @@ TreeNode* insert(TreeNode* root, int value) {
     else if (value > root->data)
         root->right = insert(root->right, value);
     else
-        return root; // Duplicate values are not allowed
+        return root; 
 
-    // Update the height of the current node
+
     updateHeight(root);
 
-    // Get the balance factor and perform rotations if necessary
+
     int balance = getBalanceFactor(root);
 
     // Left Heavy
@@ -98,7 +98,7 @@ TreeNode* insert(TreeNode* root, int value) {
     return root;
 }
 
-// Function to perform an in-order traversal of the AVL tree
+
 void inOrderTraversal(TreeNode* root) {
     if (root) {
         inOrderTraversal(root->left);
@@ -110,7 +110,7 @@ void inOrderTraversal(TreeNode* root) {
 int main() {
     TreeNode* root = nullptr;
 
-    // Insert elements into the AVL tree
+
     root = insert(root, 10);
     root = insert(root, 20);
     root = insert(root, 30);
@@ -122,8 +122,7 @@ int main() {
     inOrderTraversal(root);
     cout << endl;
 
-    // Clean up the AVL tree (free memory)
-    // You may need to implement a function to delete the tree properly.
+   
 
     return 0;
 }
