@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-// Define a structure to represent an edge in the graph
+
 struct Edge {
     int destination;
     int weight;
@@ -10,7 +10,7 @@ struct Edge {
     Edge(int dest, int w) : destination(dest), weight(w) {}
 };
 
-// Define a class to represent a graph
+
 class Graph {
 public:
     int numVertices;
@@ -21,13 +21,13 @@ public:
         adjList.resize(vertices);
     }
 
-    // Function to add an undirected edge to the graph
+
     void addEdge(int src, int dest, int weight) {
         adjList[src].emplace_back(dest, weight);
         adjList[dest].emplace_back(src, weight);
     }
 
-    // Function to print the graph
+
     void printGraph() {
         for (int i = 0; i < numVertices; ++i) {
             cout << "Vertex " << i << ": ";
@@ -43,7 +43,7 @@ int main() {
     int numVertices = 5;
     Graph graph(numVertices);
 
-    // Add edges to the graph
+
     graph.addEdge(0, 1, 2);
     graph.addEdge(0, 2, 4);
     graph.addEdge(1, 2, 1);
@@ -51,7 +51,7 @@ int main() {
     graph.addEdge(2, 4, 3);
     graph.addEdge(3, 4, 5);
 
-    // Print the graph
+
     cout << "Graph Representation (Adjacency List):" << endl;
     graph.printGraph();
 
